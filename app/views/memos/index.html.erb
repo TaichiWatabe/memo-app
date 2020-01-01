@@ -1,0 +1,17 @@
+<h3>ALL MEMO</h3>
+
+<% @memo.each do |memo| %>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= memo.title %></h3>
+        <p>カテゴリ未設定</p>
+          <div class = "buttons">
+            <a href = "/memos/<%= memo.id %>", data-method = "delete"><span class = "glyphicon glyphicon-trash"></span></a>
+            <a href = "/memos/<%= memo.id %>/edit"><span class = "glyphicon glyphicon-edit"></span></a>
+          </div>
+      </div>
+      <div class="panel-body">
+        <p><%= memo.body %></p>
+      </div>
+    </div>
+<% end %>
