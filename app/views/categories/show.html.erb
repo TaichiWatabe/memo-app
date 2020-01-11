@@ -1,6 +1,6 @@
-<h3>すべてのメモ</h3>
+<h3>カテゴリー　<%= @category.name %>　のメモ</h3>
 
-<% @memo.each do |memo| %>
+<% @memos.each do |memo| %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><%= memo.title %></h3>
@@ -15,4 +15,3 @@
       </div>
     </div>
 <% end %>
-

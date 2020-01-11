@@ -6,12 +6,11 @@ class MemosController < ApplicationController
     
     def new
         # New Memoがクリックされた時に新しいレコードを追加するアクション
-        
     end
     
     def create
         # 新規作成ページにて送信ボタンが選択された時にレコードの追加をするアクション
-        Memo.create(title:params["memos"]["title"],body:params["memos"]["body"])
+        Memo.create(title:params["memos"]["title"],body:params["memos"]["body"],category_id:params["memos"]["category_id"])
         redirect_to "/"
     end
     
@@ -25,6 +24,7 @@ class MemosController < ApplicationController
         memo = Memo.find(params["id"])
         memo.title = params["memos"]["title"]
         memo.body = params["memos"]["body"]
+        memo.category_id = params["memos"]["category_id"]
         memo.save
         redirect_to "/"
     end
